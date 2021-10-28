@@ -10,11 +10,24 @@
 
 <body>
    <script>
-      age = Number(prompt('Сколько тебе лет?'));
-      if(age<= 30){
-         alert(`Тебе всего лишь ${age} лет, ты еще совсем молод!`);
-      }else
-      alert(`${age} жизнь только начинается, но это не точно`);
+      const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const arr2 = [];
+      for (let i = 1; i <= arr.length; i++) {
+
+         let result = i % 2 === 0;
+         if (result == true) {
+            alert(i);
+         }
+         if (result == true) {
+            arr2.push(i);
+         }
+
+
+      }
+      console.log(arr);
+
+      console.log(arr2);
+
    </script>
 </body>
 
