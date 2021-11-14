@@ -21,7 +21,7 @@
       let sum = 0;
 
       function fun(array) {
-         array.forEach(function (value, index) {
+         array.map(function (value, index) {
             if (Array.isArray(value)) {
                fun(value)
             } else {
