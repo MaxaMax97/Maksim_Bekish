@@ -18,9 +18,9 @@
          1,
          8
       ];
-      let sum = 0;
 
       function fun(array) {
+         let sum = 0;
          array.map(function (value, index) {
             if (Array.isArray(value)) {
                fun(value)
