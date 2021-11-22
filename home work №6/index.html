@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <script>
+
+      const animals = [{ name: "кот", color: "белый", age: "5", voice: 'мяу' },
+      { name: "пес", color: "черный", age: "4", voice: 'гав' },
+      { name: "мышь", color: "серая", age: "2", voice: 'пи-пи' }];
+
+      class Animal {
+         constructor(name, color, age, voice) {
+            this.name = name;
+            this.color = color;
+            this.age = age;
+            this.voice = voice;
+
+         }
+      }
+
+      function animalsFabric(animals) {
+         const objectAnimals = animals.map(function (item) {
+
+            return new Animal(item.name, item.color, item.age, item.voice);
+         })
+         return objectAnimals
+
+      }
+
+      console.log(animalsFabric(animals));
+   </script>
+</body>
+
+</html>
