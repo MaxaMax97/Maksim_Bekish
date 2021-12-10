@@ -1,0 +1,15 @@
+.ul {
+   list-style-type: none;               /*убрать маркеры*/
+   justify-content:center;              /*Расположить по центру*/
+   display: flex;                       /*Расположить все в одну строку*/
+}
+
+.w1, .w2, .w3, .w4 {
+   border:solid;
+   border-radius: 30px;
+   text-shadow: 1px 1px 1px #4C69B2;  /*тень*/
+   text-decoration: none;               /*урать подчеркивание*/
+   margin: 0 5px ;                      /*отступ от краницы элемента*/
+   padding: 0px 20px 0px 20px;          /*отступ от элемента до границы элемента*/
+   color: #001a58;                    /*цвет текста*/
+}
