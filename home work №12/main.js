@@ -11,9 +11,9 @@ promise
     const rh_factor = document.getElementById("4");
     const group = document.getElementById("5");
 
-    id.innerText = `ID: ${data.id}`;
-    uid.innerText = `ID: ${data.uid}`;
-    type.innerText = `ID: ${data.type}`;
-    rh_factor.innerText = `ID: ${data.rh_factor}`;
-    group.innerText = `ID: ${data.group}`;
+    id.innerText = `id: ${data.id}`;
+    uid.innerText = `uid: ${data.uid}`;
+    type.innerText = `Тип: ${data.type}`;
+    rh_factor.innerText = `Резус фактор: ${data.rh_factor}`;
+    group.innerText = `Группа крови: ${data.group}`;
   });
