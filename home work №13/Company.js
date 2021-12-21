@@ -3,7 +3,6 @@ const urlPhone = "https://random-data-api.com/api/phone_number/random_phone_numb
 const urlUser = "https://random-data-api.com/api/users/random_user";
 
 const div = document.createElement("div");
-div.setAttribute("id", "hide_div");
 
 function show_meC() {
   div.innerHTML = ` `;
@@ -14,12 +13,13 @@ function show_meC() {
     })
     .then((company) => {
       const arrayCompany = Object.entries(company);
-      arrayCompany.forEach(function (item, index) {
-        let p = document.createElement("p");
-        div.append(p);
-        p.setAttribute("class", `p${index}`);
-        p.innerHTML = `${item[0]}: ${item[1]} `;
+      let ul = document.createElement("ul");
+      div.append(ul);
+      arrayCompany.forEach(function (item) {
+        let li = document.createElement("li");
+        ul.append(li);
+        li.innerHTML = `${item[0]}: ${item[1]} `;
       });
     });
-};
+}
 document.body.append(div);
