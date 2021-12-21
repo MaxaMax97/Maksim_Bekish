@@ -1,26 +1,25 @@
 const urlCompany = "https://random-data-api.com/api/company/random_company";
+const urlPhone = "https://random-data-api.com/api/phone_number/random_phone_number";
+const urlUser = "https://random-data-api.com/api/users/random_user";
 
-function show_meC(){
-  document.getElementById('hide_div')
-  console.log(hide_div)
+const div = document.createElement("div");
+div.setAttribute("id", "hide_div");
 
-
-const promiseCompany = fetch(urlCompany);
-promiseCompany
-  .then((responseCompany) => {
-    return responseCompany.json();
-  })
-  .then((company) => {
-    console.log(company);
-    const id = document.getElementById("1");
-    const uid = document.getElementById("2");
-    const type = document.getElementById("3");
-    const business_name = document.getElementById("4");
-    const suffix = document.getElementById("5");
-
-    id.innerText = `id company: ${company.id}`;
-    uid.innerText = `uid: ${company.uid}`;
-    type.innerText = `Тип: ${company.type}`;
-    business_name.innerText = `Имя фирмы: ${company.business_name}`;
-    suffix.innerText = `Суффикс: ${company.suffix}`;
-  });}
+function show_meC() {
+  div.innerHTML = ` `;
+  const promiseCompany = fetch(urlCompany);
+  promiseCompany
+    .then((responseCompany) => {
+      return responseCompany.json();
+    })
+    .then((company) => {
+      const arrayCompany = Object.entries(company);
+      arrayCompany.forEach(function (item, index) {
+        let p = document.createElement("p");
+        div.append(p);
+        p.setAttribute("class", `p${index}`);
+        p.innerHTML = `${item[0]}: ${item[1]} `;
+      });
+    });
+};
+document.body.append(div);
