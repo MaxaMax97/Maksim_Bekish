@@ -1,8 +1,9 @@
 const urlCompany = "https://random-data-api.com/api/company/random_company";
 const urlPhone = "https://random-data-api.com/api/phone_number/random_phone_number";
 const urlUser = "https://random-data-api.com/api/users/random_user";
-
 const div = document.createElement("div");
+
+
 company.addEventListener ('click',show_meC );
 function show_meC() {
   div.innerHTML = ` `;
