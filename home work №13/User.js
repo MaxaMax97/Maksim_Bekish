@@ -1,3 +1,4 @@
+user.addEventListener ('click',show_meU );
 function show_meU() {
   div.innerHTML = ` `;
   const promiseUser = fetch(urlUser);

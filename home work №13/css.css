@@ -1,6 +1,6 @@
-.user,
-.phone,
-.company {
+#user,
+#phone,
+#company {
   background: transparent;
   border: 1px solid #232323;
   position: relative;
@@ -10,9 +10,9 @@
   padding: 17px 34px 17px 39px;
   margin: 5px 10px;
 }
-.user:before,
-.phone:before,
-.company:before {
+#user:before,
+#phone:before,
+#company:before {
   content: "";
   position: absolute;
   top: 0;
@@ -23,9 +23,9 @@
   z-index: -1;
   transition: 0.25s ease;
 }
-.user:hover:before,
-.phone:hover:before,
-.company:hover:before {
+#user:hover:before,
+#phone:hover:before,
+#company:hover:before {
   transform: translate(4px, 4px);
 }
 
