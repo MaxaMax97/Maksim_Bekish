@@ -1,5 +1,6 @@
 #user,
 #phone,
+#exit,
 #company {
   background: transparent;
   border: 1px solid #232323;
@@ -12,6 +13,7 @@
 }
 #user:before,
 #phone:before,
+#exit:before,
 #company:before {
   content: "";
   position: absolute;
@@ -25,9 +27,11 @@
 }
 #user:hover:before,
 #phone:hover:before,
+#exit:hover:before,
 #company:hover:before {
   transform: translate(4px, 4px);
 }
+
 
 li {
   list-style: none;
