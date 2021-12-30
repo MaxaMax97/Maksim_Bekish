@@ -24,8 +24,7 @@ document.getElementById("submit").onclick = function () {
 
   const p = inputPassword.value;
   const l = inputLogin.value;
-  localStorage.setItem("password", p);
-  localStorage.setItem("login", l);
+
   if (
     valid5(login) &&
     valid5(password) &&
@@ -34,6 +33,8 @@ document.getElementById("submit").onclick = function () {
     localStorage.getItem("login") !== null &&
     localStorage.getItem("password") !== null
   ) {
+    localStorage.setItem("password", p);
+    localStorage.setItem("login", l);
     const h1 = document.createElement("h1");
     h1.innerText = "Ты справился";
     div1.append(h1);
