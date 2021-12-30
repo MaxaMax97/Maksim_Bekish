@@ -38,6 +38,6 @@ document.getElementById("submit").onclick = function () {
     div.append(h1);
     document.body.append(div);
   } else {
-    alert("Попробуй еще");
+    span.innerText = "Не правильно ввели данные";
   }
 };
