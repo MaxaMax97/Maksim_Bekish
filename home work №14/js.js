@@ -23,21 +23,20 @@ document.getElementById("submit").onclick = function () {
 
   const p = inputPassword.value;
   const l = inputLogin.value;
-
+  localStorage.setItem("password", p);
+  localStorage.setItem("login", l);
   if (
     valid5sim(password.value) &&
     valid1cifra(password.value) &&
     valid1bukva(password.value) &&
-    valid5simpassword(login.value)
+    valid5simpassword(login.value) &&
+    localStorage.getItem("login") !== null &&
+    localStorage.getItem("password") !== null
   ) {
-    submit.addEventListener("mousedown", link);
-    function link() {
-      document.location.replace(
-        "file:///D:/IT/JavaScript/home%20work%20%E2%84%9613/index.html"
-      );
-    }
-    localStorage.setItem("password", p);
-    localStorage.setItem("login", l);
+    const h1 = document.createElement("h1");
+    h1.innerText = "Ты справился";
+    div.append(h1);
+    document.body.append(div);
   } else {
     alert("Попробуй еще");
   }
