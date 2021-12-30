@@ -27,9 +27,10 @@ document.getElementById("submit").onclick = function () {
   localStorage.setItem("password", p);
   localStorage.setItem("login", l);
   if (
-    valid5(password.value) &&
-    valid1cifra(password.value) &&
-    valid1bukva(password.value) &&
+    valid5(login) &&
+    valid5(password) &&
+    valid1cifra(password) &&
+    valid1bukva(password) &&
     localStorage.getItem("login") !== null &&
     localStorage.getItem("password") !== null
   ) {
