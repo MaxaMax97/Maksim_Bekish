@@ -4,6 +4,7 @@ const inputLogin = document.createElement("input");
 const inputSubmit = document.createElement("input");
 const br = document.createElement("br");
 const div = document.createElement("div");
+const div1 = document.createElement("div");
 div.append(span, br, inputLogin, inputPassword, inputSubmit);
 span.innerText = "Введите логин и пароль";
 inputPassword.type = "password";
@@ -35,8 +36,9 @@ document.getElementById("submit").onclick = function () {
   ) {
     const h1 = document.createElement("h1");
     h1.innerText = "Ты справился";
-    div.append(h1);
-    document.body.append(div);
+    div1.append(h1);
+    div.hidden = true;
+    document.body.append(div1);
   } else {
     span.innerText = "Не правильно ввели данные";
   }
