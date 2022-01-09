@@ -20,32 +20,14 @@ function fan(url) {
         li.innerHTML = `${item[0]}: ${item[1]} `;
       });
     });
-};
+}
 
-company.addEventListener("click", fann);
-user.addEventListener("click", fann);
-phone.addEventListener("click", fann);
+company.addEventListener("click", fann.bind(null, urlCompany));
+user.addEventListener("click", fann.bind(null, urlUser));
+phone.addEventListener("click", fann.bind(null, urlPhone));
 
-function fann(urlCompany) {
+function fann(urlm) {
   div.innerHTML = ` `;
-  fan(urlCompany);
-};
+  fan(urlm);
+}
 document.body.append(div);
-
-//company.addEventListener("click", show_meC);
-//function show_meC() {
-//  div.innerHTML = ` `;
-//  fan(urlCompany);
-//}
-//user.addEventListener("click", show_meU);
-//function show_meU() {
-//  div.innerHTML = ` `;
-//  fan(urlUser);
-//}
-//phone.addEventListener("click", show_meP);
-//function show_meP() {
-//  div.innerHTML = ` `;
-//  fan(urlPhone);
-//}
-
-//document.body.append(div);
