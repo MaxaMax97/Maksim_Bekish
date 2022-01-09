@@ -1,4 +1,3 @@
-const urlExit = "file:///D:/IT/JavaScript/home%20work%20%E2%84%9614/index.html";
 const urlCompany = "https://random-data-api.com/api/company/random_company";
 const urlPhone =
   "https://random-data-api.com/api/phone_number/random_phone_number";
@@ -21,29 +20,32 @@ function fan(url) {
         li.innerHTML = `${item[0]}: ${item[1]} `;
       });
     });
-}
+};
 
-company.addEventListener("click", show_meC);
-function show_meC() {
+company.addEventListener("click", fann);
+user.addEventListener("click", fann);
+phone.addEventListener("click", fann);
+
+function fann(urlCompany) {
   div.innerHTML = ` `;
   fan(urlCompany);
-}
-user.addEventListener("click", show_meU);
-function show_meU() {
-  div.innerHTML = ` `;
-  fan(urlUser);
-}
-phone.addEventListener("click", show_meP);
-function show_meP() {
-  div.innerHTML = ` `;
-  fan(urlPhone);
-}
-exit.addEventListener("click", show_meE);
-function show_meE() {
-  document.location.replace(
-    "file:///D:/IT/JavaScript/home%20work%20%E2%84%9614/index.html"
-  );
-  localStorage.clear();
-}
-
+};
 document.body.append(div);
+
+//company.addEventListener("click", show_meC);
+//function show_meC() {
+//  div.innerHTML = ` `;
+//  fan(urlCompany);
+//}
+//user.addEventListener("click", show_meU);
+//function show_meU() {
+//  div.innerHTML = ` `;
+//  fan(urlUser);
+//}
+//phone.addEventListener("click", show_meP);
+//function show_meP() {
+//  div.innerHTML = ` `;
+//  fan(urlPhone);
+//}
+
+//document.body.append(div);
