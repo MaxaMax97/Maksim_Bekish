@@ -1,0 +1,8 @@
+.red{
+   border: 1px solid red;
+   box-shadow: 1px 1px 2px 0 red;
+}
+.green{
+   border: 3px solid green;
+   box-shadow: 1px 1px 2px 0 green;
+}

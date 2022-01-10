@@ -21,7 +21,6 @@ document.body.append(div);
 document.getElementById("submit").onclick = function () {
   let login = document.getElementById("login").value;
   let password = document.getElementById("password").value;
-
   const p = inputPassword.value;
   const l = inputLogin.value;
 
