@@ -4,7 +4,7 @@ const urlPhone =
 const urlUser = "https://random-data-api.com/api/users/random_user";
 const div = document.createElement("div");
 
-function fan(url) {
+function allCod(url) {
   const promise = fetch(url);
   promise
     .then((response) => {
@@ -22,12 +22,12 @@ function fan(url) {
     });
 }
 
-company.addEventListener("click", fann.bind(null, urlCompany));
-user.addEventListener("click", fann.bind(null, urlUser));
-phone.addEventListener("click", fann.bind(null, urlPhone));
+company.addEventListener("click", update.bind(null, urlCompany));
+user.addEventListener("click", update.bind(null, urlUser));
+phone.addEventListener("click", update.bind(null, urlPhone));
 
-function fann(urlm) {
+function update(url) {
   div.innerHTML = ` `;
-  fan(urlm);
+  allCod(url);
 }
 document.body.append(div);
