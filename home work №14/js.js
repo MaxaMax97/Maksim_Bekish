@@ -20,11 +20,11 @@ document.body.append(div);
 submit.addEventListener("click", validFunction);
 
 function validFunction() {
-  let login = document.getElementById("login").value;
-  let password = document.getElementById("password").value;
-  if (valid(login) && valid(password)) {
-    localStorage.setItem("login", login);
-    localStorage.setItem("password", password);
+  let loginValue = document.getElementById("login").value;
+  let passwordValue = document.getElementById("password").value;
+  if (valid(loginValue) && valid(passwordValue)) {
+    localStorage.setItem("login", loginValue);
+    localStorage.setItem("password", passwordValue);
     const h1 = document.createElement("h1");
     h1.innerText = "Ты справился";
     div1.append(h1);
