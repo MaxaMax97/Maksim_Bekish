@@ -1,6 +1,6 @@
 const array = [
   { element: "input", type: "submit", id: "submit" },
-  { element: "input", type: "password", id: "password", placeholder: "Пароль" },
+  { element: "input", type: "text", id: "password", placeholder: "Пароль" },
   { element: "input", type: "text", id: "login", placeholder: "Логин" },
   { element: "br", id: "br" },
   { element: "sapn", id: "span", innerText: "Введите логин и пароль" },
@@ -25,10 +25,8 @@ function validFunction() {
   let login = document.getElementById("login").value;
   let password = document.getElementById("password").value;
   if (
-    validFiveDigit(login) &&
-    validFiveDigit(password) &&
-    validOneDigit(password) &&
-    validOneLetter(password)
+    validFiveDigit(login, ) &&
+    validFiveDigit(password) 
   ) {
     localStorage.setItem("password", password.value);
     localStorage.setItem("login", login.value);

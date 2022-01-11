@@ -1,11 +1,15 @@
 function validFiveDigit(value) {
-  return value.length >= 5;
+  if (
+    (valid = value.length >= 5 && /\d/.test(value) && value.match(/[a-z]/i))
+  ) {
+    return valid;
+  }
 }
 
-function validOneDigit(value) {
-  return /\d/.test(value);
-}
+//function validOneDigit(value) {
+//  return /\d/.test(value);
+//}
 
-function validOneLetter(value) {
-  return value.match(/[a-z]/i);
-}
+//function validOneLetter(value) {
+//  return value.match(/[a-z]/i);
+//}
