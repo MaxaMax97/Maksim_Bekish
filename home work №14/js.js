@@ -1,39 +1,37 @@
-const span = document.createElement("span");
-const inputPassword = document.createElement("input");
-const inputLogin = document.createElement("input");
-const inputSubmit = document.createElement("input");
-const br = document.createElement("br");
+const array = [
+  { element: "input", type: "submit", id: "submit" },
+  { element: "input", type: "password", id: "password", placeholder: "Пароль" },
+  { element: "input", type: "text", id: "login", placeholder: "Логин" },
+  { element: "br", id: "br" },
+  { element: "sapn", id: "span", innerText: "Введите логин и пароль" },
+];
+
 const div = document.createElement("div");
 const div1 = document.createElement("div");
-div.append(span, br, inputLogin, inputPassword, inputSubmit);
-span.innerText = "Введите логин и пароль";
-inputPassword.type = "password";
-inputLogin.type = "text";
-inputSubmit.type = "submit";
-inputPassword.placeholder = "Пароль";
-inputLogin.placeholder = "Логин";
-inputLogin.id = "login";
-inputPassword.id = "password";
-inputSubmit.id = "submit";
 
+array.forEach((item) => {
+  const tagName = document.createElement(item.element);
+  div.prepend(tagName);
+  tagName.innerText = item.innerText;
+  tagName.id = item.id;
+  tagName.type = item.type;
+  tagName.placeholder = item.placeholder;
+});
 document.body.append(div);
 
-document.getElementById("submit").onclick = function () {
+submit.addEventListener("click", validFunction);
+
+function validFunction() {
   let login = document.getElementById("login").value;
   let password = document.getElementById("password").value;
-  const p = inputPassword.value;
-  const l = inputLogin.value;
-
   if (
-    valid5(login) &&
-    valid5(password) &&
-    valid1cifra(password) &&
-    valid1bukva(password) &&
-    localStorage.getItem("login") !== null &&
-    localStorage.getItem("password") !== null
+    validFiveDigit(login) &&
+    validFiveDigit(password) &&
+    validOneDigit(password) &&
+    validOneLetter(password)
   ) {
-    localStorage.setItem("password", p);
-    localStorage.setItem("login", l);
+    localStorage.setItem("password", password.value);
+    localStorage.setItem("login", login.value);
     const h1 = document.createElement("h1");
     h1.innerText = "Ты справился";
     div1.append(h1);
@@ -42,4 +40,4 @@ document.getElementById("submit").onclick = function () {
   } else {
     span.innerText = "Не правильно ввели данные";
   }
-};
+}

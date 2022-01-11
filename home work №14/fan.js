@@ -1,11 +1,11 @@
-function valid5(value) {
+function validFiveDigit(value) {
   return value.length >= 5;
 }
 
-function valid1cifra(value) {
+function validOneDigit(value) {
   return /\d/.test(value);
 }
 
-function valid1bukva(value) {
+function validOneLetter(value) {
   return value.match(/[a-z]/i);
 }
