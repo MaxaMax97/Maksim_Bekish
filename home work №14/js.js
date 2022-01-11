@@ -5,10 +5,8 @@ const array = [
   { element: "br", id: "br" },
   { element: "sapn", id: "span", innerText: "Введите логин и пароль" },
 ];
-
 const div = document.createElement("div");
 const div1 = document.createElement("div");
-
 array.forEach((item) => {
   const tagName = document.createElement(item.element);
   div.prepend(tagName);
@@ -24,12 +22,9 @@ submit.addEventListener("click", validFunction);
 function validFunction() {
   let login = document.getElementById("login").value;
   let password = document.getElementById("password").value;
-  if (
-    validFiveDigit(login, ) &&
-    validFiveDigit(password) 
-  ) {
-    localStorage.setItem("password", password.value);
-    localStorage.setItem("login", login.value);
+  if (valid(login) && valid(password)) {
+    localStorage.setItem("login", login);
+    localStorage.setItem("password", password);
     const h1 = document.createElement("h1");
     h1.innerText = "Ты справился";
     div1.append(h1);
@@ -38,4 +33,8 @@ function validFunction() {
   } else {
     span.innerText = "Не правильно ввели данные";
   }
+}
+function valid(value) {
+  const valid = value.length >= 5 && /\d/.test(value) && value.match(/[a-z]/i);
+  return valid;
 }
