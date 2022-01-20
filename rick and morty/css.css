@@ -1,15 +1,12 @@
-body{
+body {
   margin: 0;
 }
 .allcontent {
-  
   padding-top: 81px;
   padding-bottom: 81px;
   background: rgb(36, 40, 47);
 }
-
 .content {
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,7 +14,6 @@ body{
 p {
   margin: 0;
 }
-
 .card {
   margin: 13.5px;
   overflow: hidden;
@@ -32,12 +28,7 @@ p {
   color: white;
   text-decoration: none;
 }
-/*.img1 {
-  max-width: 300px;
-  width: 100%;
-}*/
 .img1 img {
-  
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -74,19 +65,26 @@ p {
   border-radius: 100%;
   background-color: green;
 }
-
-.status.red:before{
+.status.red:before {
   background-color: red;
 }
-.status.gray::before{
+.status.gray::before {
   background-color: gray;
 }
-#pagination{
+#pagination {
   padding: 5px;
   font-size: 20px;
-  
-  
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
 }
-.paginA{
+.paginA {
+  text-decoration: none;
+  display: inline-block;
+
+  color: white;
   padding: 7px;
+}
+#pagination a:hover {
+  color: orange;
 }

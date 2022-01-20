@@ -1,0 +1,40 @@
+.allContent{
+   justify-content: center;
+    display: flex;
+    background: rgb(36, 40, 47);
+    padding: 50px 0 50px 0;
+}
+.person{
+  
+   border-radius: 10px;
+   padding: 10px;
+   background-color: grey;
+}
+.episode {
+}
+.id-persen {
+}
+.first-episode {
+}
+.last-episode {
+}
+.gender {
+}
+.location {
+}
+.name-location {
+}
+.name {
+}
+.origin {
+}
+.species {
+}
+.status {
+}
+img{
+   margin: 0;
+}
+a{
+   text-decoration: none;
+}
