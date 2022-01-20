@@ -3,17 +3,13 @@ body{
 }
 .allcontent {
   
-  display: flex;
   padding-top: 81px;
   padding-bottom: 81px;
   background: rgb(36, 40, 47);
 }
-.template{
-  display: none;
-}
+
 .content {
   
- 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -84,4 +80,13 @@ p {
 }
 .status.gray::before{
   background-color: gray;
+}
+#pagination{
+  padding: 5px;
+  font-size: 20px;
+  
+  
+}
+.paginA{
+  padding: 7px;
 }
