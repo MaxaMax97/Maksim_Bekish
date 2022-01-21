@@ -5,9 +5,13 @@ async function person(urla) {
   allContent.className = "allContent";
  
   document.body.append(allContent);
- 
+     
   allContent.innerHTML = `
+        
          <div class="person">
+         <div>
+         <a href="">Главное меню</a>
+      </div>
          <div>
             <img src="${person.image}" alt="">
          </div>
@@ -31,7 +35,7 @@ async function person(urla) {
          </div>
          <div class="name">
          <span> Name: </span>
-            <a href="https://rickandmortyapi.com/api/character/${person.id}"> ${person.name}</a>
+            <a   href="https://rickandmortyapi.com/api/character/${person.id}"> ${person.name}</a>
          </div>
          <div class="origin">
          <span> Origin: </span>

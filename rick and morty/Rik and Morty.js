@@ -10,14 +10,17 @@ async function getResponse(url) {
     getInfo(infoallcontents);
   }
   const template = document.querySelector(".content");
-
+  const allcontennt = document.querySelector(".allcontent");
   template.innerHTML = " ";
   for (let key in allcontent) {
-    const episodeLast =
-      allcontent[key].episode[allcontent[key].episode.length - 1];
+    const episodeLast = allcontent[key].episode[allcontent[key].episode.length - 1];
+   
+    
+   
+
     let episodeLastFetch = await fetch(episodeLast);
     let contentEpisodeLastFetch = await episodeLastFetch.json();
-
+    
     const episodeFirst = allcontent[key].episode[0];
     let episodeFirstFetch = await fetch(episodeFirst);
     let contentEpisodeFirstFetch = await episodeFirstFetch.json();
@@ -36,7 +39,7 @@ async function getResponse(url) {
   </div>
   <div class="text">
     <div>
-      <a class="title"  href="#" >  ${allcontent[key].name}
+      <a class="title"  id="${allcontent[key].id}" href="#" > ${allcontent[key].name}
       </a>
       <p class=" status ${className}">${allcontent[key].status}  ${
       allcontent[key].status === "unknown" ? "" : "- " + allcontent[key].species
@@ -55,16 +58,18 @@ async function getResponse(url) {
   </div>
 </div>`;
   }
+  
 
   const title = document.querySelectorAll(".title");
   const arr = Array.from(title);
+
   for (let i = 0; i <= arr.length - 1; i++) {
     arr[i].addEventListener("click", function () {
-      const num = i + 1;
-      console.log(num);
-      person("https://rickandmortyapi.com/api/character/" + num);
+      allcontennt.innerHTML = " ";
+      person("https://rickandmortyapi.com/api/character/" +arr[i].id);
     });
   }
+
 }
 let pointpagin = true;
 async function getInfo(pages) {
@@ -77,7 +82,7 @@ async function getInfo(pages) {
       event.preventDefault();
       const url = event.target.href;
       getResponse(url);
-      console.log(url + " jkjkjk");
+      
       pointpagin = false;
     });
     pagination.append(a);
