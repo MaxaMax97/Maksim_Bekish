@@ -3,7 +3,9 @@ async function person(urla) {
   const person = await api.json();
   const allContent = document.createElement("div");
   allContent.className = "allContent";
+ 
   document.body.append(allContent);
+ 
   allContent.innerHTML = `
          <div class="person">
          <div>
@@ -25,11 +27,11 @@ async function person(urla) {
          </div>
          <div class="location">
          <span> Location: </span>
-         <a href="${person.location.url}">${person.location.name}</a>
+         <a href="  ">${person.location.name}</a>
          </div>
          <div class="name">
          <span> Name: </span>
-            <a href="${person.url}"> ${person.name}</a>
+            <a href="https://rickandmortyapi.com/api/character/${person.id}"> ${person.name}</a>
          </div>
          <div class="origin">
          <span> Origin: </span>
@@ -41,4 +43,4 @@ async function person(urla) {
 `;
 }
 
-//person("https://rickandmortyapi.com/api/character/163");
+'person("https://rickandmortyapi.com/api/character/163")';

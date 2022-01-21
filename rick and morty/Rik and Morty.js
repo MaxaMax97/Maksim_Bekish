@@ -10,9 +10,9 @@ async function getResponse(url) {
     getInfo(infoallcontents);
   }
   const template = document.querySelector(".content");
-  let key;
+
   template.innerHTML = " ";
-  for (key in allcontent) {
+  for (let key in allcontent) {
     const episodeLast =
       allcontent[key].episode[allcontent[key].episode.length - 1];
     let episodeLastFetch = await fetch(episodeLast);
@@ -28,6 +28,7 @@ async function getResponse(url) {
     if (allcontent[key].status === "unknown") {
       className = "gray";
     }
+
     template.innerHTML += `
 <div  class="card " >
   <div class="img1">
@@ -53,7 +54,16 @@ async function getResponse(url) {
     </div>
   </div>
 </div>`;
-   
+  }
+
+  const title = document.querySelectorAll(".title");
+  const arr = Array.from(title);
+  for (let i = 0; i <= arr.length - 1; i++) {
+    arr[i].addEventListener("click", function () {
+      const num = i + 1;
+      console.log(num);
+      person("https://rickandmortyapi.com/api/character/" + num);
+    });
   }
 }
 let pointpagin = true;
@@ -74,5 +84,4 @@ async function getInfo(pages) {
   }
 }
 getResponse("https://rickandmortyapi.com/api/character");
-person('https://rickandmortyapi.com/api/character/4')
-
+//person('https://rickandmortyapi.com/api/character/3')
