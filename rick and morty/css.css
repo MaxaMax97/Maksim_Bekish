@@ -45,6 +45,7 @@ p {
 }
 .card a:hover {
   color: orange;
+  transition: all 0.5s ease-out;
 }
 .subtitle {
   color: rgb(158, 158, 158);
@@ -69,7 +70,7 @@ p {
   background-color: red;
 }
 .status.gray::before {
-  background-color: gray;
+  background-color: rgb(36, 40, 47);
 }
 #pagination {
   padding: 5px;
@@ -87,4 +88,14 @@ p {
 }
 #pagination a:hover {
   color: orange;
+}
+
+.origin:before, .name:before,  .location:before, .gender:before, .episode:before, .id-persen:before, .species:before {
+  left: 0;
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #a9d3e9;
 }
