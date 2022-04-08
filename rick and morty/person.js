@@ -1,12 +1,9 @@
-async function person(urla) {
-  const api = await fetch(urla);
+let fann = async function (www) {
+  const api = await fetch(www);
   const person = await api.json();
 
-  const allContent = document.createElement("div");
-  allContent.className = "allContent";
-
-  document.body.append(allContent);
-
+  const allContent = document.getElementById("allContent");
+  
   let className = "";
   if (person.status === "Dead") {
     className = "red";
@@ -14,18 +11,17 @@ async function person(urla) {
   if (person.status === "unknown") {
     className = "gray";
   }
+ 
+  allContent.innerHTML += `
 
-  allContent.innerHTML = `
-         
    <div class="person">
    <div class="mainmenu">
-      <a class='mainmenubutton' href=""> Главное меню </a>
+      <a class='mainmenubutton' href="index.html"> Главное меню </a>
    </div>
-
    <div class="aLLcontent" >
-   <di v class="image">
+   <div class="image">
       <img src="${person.image}" alt="">
-   </di>
+   </div>
    <div class="id-persen">
       Сharacter number: ${person.id}
    </div>
@@ -57,4 +53,11 @@ async function person(urla) {
 </div>
 </div>
 `;
-}
+};
+
+
+
+fann(`https://rickandmortyapi.com/api/character/3`);
+
+//console.log("1    "+article)
+//console.log("2    "+ article.dataset.id)
