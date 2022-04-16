@@ -1,60 +1,81 @@
-//---------------view-----------------//
-
-let view = {
-  showresult: function (n) {
-    let answer = document.getElementById("show-result");
-    answer.innerHTML = `Ответ ${n}`;
-  },
-};
-
 //--------------model------------------//
 
 let model = {
-  result: 0,
-  calcul: function (x, y) {
-    switch (operand.value) {
-      case "-":
-        this.result = Number(x.value) - Number(y.value);
-        break;
+  valueOne: null,
+  valueTwo: null,
+  result: null,
+  buttonDisabled: true,
+  calcul: function (x) {
+    switch (x) {
       case "+":
-        this.result = Number(x.value) + Number(y.value);
+        this.result = +this.valueOne + +this.valueTwo;
+        break;
+      case "-":
+        this.result = this.valueOne - this.valueTwo;
         break;
       case "/":
-        this.result = Number(x.value) / Number(y.value);
+        if(this.valueOne==0 || this.valueTwo==0 ){
+        this.result="Error"
+        }else{
+        this.result = this.valueOne / this.valueTwo;}
         break;
       case "*":
-        this.result = Number(x.value) * Number(y.value);
+        this.result = this.valueOne * this.valueTwo;
         break;
     }
+    this.updateResult();
+  },
+  disableButton: function (state) {
+    this.buttonDisabled = state;
+    view.buttonUpdate(this.buttonDisabled);
+  },
+  updateResult: function () {
     view.showresult(this.result);
   },
 };
-//-----------------controler-----------------------//
-let controler = {
-  control: function () {
-    let input_1 = document.getElementById("input_1");
-    let input_2 = document.getElementById("input_2");
-    model.calcul(input_1, input_2);
+
+//---------------view-----------------//
+
+let view = {
+  resultField: document.getElementById("show-result"),
+  btn: document.getElementById("calculate-btn"),
+  showresult: function (result) {
+    result === null
+      ? (this.resultField.textContent = "")
+      : (this.resultField.textContent = "Результат вычислений = " + result);
+  },
+  buttonUpdate: function (isDisabled) {
+    this.btn.disabled = isDisabled;
   },
 };
-//------------------------------//
-(function () {
-  let app = {
-    event: function () {
-      let button = document.getElementById("calculate-btn");
-      button.disabled = true;
-      let input_2 = document.getElementById("input_2");
-      input_2.addEventListener("blur", bluring);
-      function bluring() {
-        if (input_2.value) {
-          button.disabled = false;
-        } else {
-          button.disabled = true;
-        }
+
+//-----------------controler-----------------------//
+
+let controler = {
+  control: function () {
+    const button = document.getElementById("calculate-btn");
+    const slct = document.getElementById("operand");
+    const input_1 = document.getElementById("input_1");
+    const input_2 = document.getElementById("input_2");
+    input_2.addEventListener("blur", bluring);
+    input_1.addEventListener("blur", bluring);
+    model.disableButton(true);
+    function bluring() {
+      if (input_2.value && input_1.value) {
+        model.valueOne = input_1.value;
+        model.valueTwo = input_2.value;
+        model.disableButton(false);
+      } else {
+        model.disableButton(true);
+        model.result = null;
+        model.updateResult();
       }
-      button.onclick = controler.control;
-    },
-    function() {},
-  };
-  app.event();
-})();
+    }
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      model.calcul(slct.value);
+    });
+  },
+};
+
+controler.control();

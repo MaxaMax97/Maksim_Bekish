@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clock {
+  border: 3px black solid;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  background-color: #99b58a;
+  border-radius: 50%;
+  position: relative;
+  margin: 20px;
+}
+
+#sek {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  width: 150px;
+  height: 3px;
+  background-color: black;
+  border-radius: 5px;
+  transform: rotate(270deg);
+  transform-origin: 0;
+}
+#min {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  height: 5px;
+  background-color: black;
+  border-radius: 5px;
+  transform: rotate(270deg);
+  transform-origin: 0;
+}
+
+#hour {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  height: 10px;
+  background-color: black;
+  border-radius: 5px;
+  transform: rotate(270deg);
+  transform-origin: 0;
+}
+
+#circles {
+  z-index: 5;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: 50%;
+  top: 50%;
+
+  background-color: black;
+  border-radius: 50%;
+  
+  transform-origin: 0;
+}
+#tchk1,
+#tchk2,
+#tchk3,
+#tchk4,
+#tchk5,
+#tchk6,
+#tchk7,
+#tchk8,
+#tchk9,
+#tchk10,
+#tchk11,
+#tchk12 {
+  color: white;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  margin: -25px;
+  background-color: #48475e;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
