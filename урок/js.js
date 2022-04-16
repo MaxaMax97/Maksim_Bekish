@@ -14,10 +14,11 @@ let model = {
         this.result = this.valueOne - this.valueTwo;
         break;
       case "/":
-        if(this.valueOne==0 || this.valueTwo==0 ){
-        this.result="Error"
-        }else{
-        this.result = this.valueOne / this.valueTwo;}
+        if (this.valueOne == 0 || this.valueTwo == 0) {
+          this.result = "Error";
+        } else {
+          this.result = this.valueOne / this.valueTwo;
+        }
         break;
       case "*":
         this.result = this.valueOne * this.valueTwo;

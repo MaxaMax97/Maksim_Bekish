@@ -1,67 +1,73 @@
-//////////////------эЛЕМЕНТЫ------/////////////
-let modelOpen = document.getElementById("modal-open");
-let modalClose = document.getElementById("modal-close");
-let model = document.getElementById("modal");
-let modalCancel = document.getElementById("modal-cancel");
-let modalSave = document.getElementById("modal-save");
-let userName = document.getElementById("name");
-let birthDay = document.getElementById("birth-day");
-birthDay.setAttribute("maxLength", 2);
-let birthMonth = document.getElementById("birth-month");
-birthMonth.setAttribute("maxLength", 2);
-let birthYear = document.getElementById("birth-year");
-birthYear.setAttribute("maxLength", 4);
-let conteiner = document.querySelector(".container");
-let div = document.createElement("div");
-let spanName = document.createElement("span");
-conteiner.append(div);
-div.append(spanName);
-//////////////------СОБЫТИЯ------/////////////
-userName.addEventListener("blur", dis);
-birthDay.addEventListener("blur", dis);
-birthMonth.addEventListener("blur", dis);
-birthYear.addEventListener("blur", dis);
-modalClose.addEventListener("click", close);
-modelOpen.addEventListener("click", openn);
-modalCancel.addEventListener("click", close);
-modalSave.addEventListener("click", saveInfo);
+//////////////////////////////////////////////////---------------------controller---------------------------///////////////////////////////////////////
 
-//////////////------ФУНКЦИИ------/////////////
+let controller = {
+  modalOpen: document.getElementById("modal-open"),
+  modalClose: document.getElementById("modal-close"),
+  modalCancel: document.getElementById("modal-cancel"),
+  modalSave: document.getElementById("modal-save"),
+  userName: document.getElementById("name"),
+  birthDay: document.getElementById("birth-day"),
+  birthMonth: document.getElementById("birth-month"),
+  birthYear: document.getElementById("birth-year"),
+  conteiner: document.querySelector(".container"),
+  pName: document.createElement("p"),
+};
 
-setTimeout(newinfo, 0);
+controller.conteiner.append(controller.pName);
+
+controller.modalOpen.addEventListener("click", openn);
+controller.userName.addEventListener("blur", disabledButton);
+controller.birthDay.addEventListener("blur", disabledButton);
+controller.birthMonth.addEventListener("blur", disabledButton);
+controller.birthYear.addEventListener("blur", disabledButton);
+controller.modalClose.addEventListener("click", close);
+controller.modalCancel.addEventListener("click", close);
+controller.modalSave.addEventListener("click", saveInfo);
+
+newinfo();
 
 function saveInfo() {
   let obj = {
-    name: userName.value,
-    day: birthDay.value,
-    month: birthMonth.value,
-    year: birthYear.value,
+    name: controller.userName.value,
+    day: controller.birthDay.value,
+    month: controller.birthMonth.value,
+    year: controller.birthYear.value,
   };
   let json = JSON.stringify(obj);
   localStorage.setItem("dataInfo", json);
-  modal.classList.toggle("modal_closed");
+  openn();
   newinfo();
 }
-function openn() {
-  modal.classList.toggle("modal_closed");
-}
-function close() {
-  modal.classList.toggle("modal_closed");
-  spanName.innerHTML = ``;
-}
-function newinfo() {
-  let json = localStorage.getItem("dataInfo");
-  let obj = JSON.parse(json);
-  spanName.innerHTML = `Добро пожаловать, ${obj.name} <br/> Твой день pождения ${obj.day}. ${obj.month}. ${obj.year}`;
-}
-function dis(event) {
+
+function disabledButton(event) {
   event.preventDefault();
-  if (userName.value && birthDay.value && birthMonth.value && birthYear.value) {
-    modalSave.disabled = false;
+  if (
+    controller.userName.value &&
+    controller.birthDay.value &&
+    controller.birthMonth.value &&
+    controller.birthYear.value
+  ) {
+    controller.modalSave.disabled = false;
   } else {
-    modalSave.disabled = true;
+    controller.modalSave.disabled = true;
   }
 }
 
+function newinfo() {
+  let json = localStorage.getItem("dataInfo");
+  let obj = JSON.parse(json);
+  controller.pName.innerHTML = `Добро пожаловать, ${obj.name} <br/> Твой день pождения ${obj.day}. ${obj.month}. ${obj.year}`;
+}
+
+function close() {
+  openn();
+  controller.pName.innerHTML = ``;
+}
+
+function openn() {
+  modal.classList.toggle("modal_closed");
+}
+
 //////////////------прочее------/////////////
-modalSave.disabled = true;
+
+controller.modalSave.disabled = true;
