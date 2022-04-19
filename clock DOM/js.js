@@ -11,8 +11,11 @@ let divCircles = document.createElement("div");
 divCircles.id = "circles";
 
 divClock.append(divSek, divMin, divHour, divCircles);
-
 document.body.prepend(divClock);
+
+
+
+
 let angle = 0;
 for (i = 1; i <= 12; i++) {
   let divTchk = document.createElement("div");
@@ -41,7 +44,7 @@ for (i = 1; i <= 12; i++) {
 const secArrow = document.getElementById("sek");
 const minArrow = document.getElementById("min");
 const hourArrow = document.getElementById("hour");
-secondArrow()
+secondArrow();
 setInterval(secondArrow, 1000);
 function secondArrow() {
   let data = new Date();

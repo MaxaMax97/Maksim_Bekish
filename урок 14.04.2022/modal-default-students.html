@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js.js" defer ></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <script src="js.js" defer></script>
     <link rel="stylesheet" href="styles.css">
-
-    <title>Document</title>
+    <title>Modal default</title>
 </head>
+
 <body>
-    
-<div class="container">
-    <h1>Создание простейшего модального окошка!</h1>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
-    <p class="btn"><a href="#" id="modal-open" class="modal-open" title="Покажите мне модальное окошко">Открыть окно</a></p>
-</div>
-
-<div class="modal-overlay modal_closed" id="modal-overlay"></div>
-<div class="modal modal_closed" id="modal">
-    <header class="modal__header">
-        <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
-        <h2>Введите данные</h2>
-    </header>
-
-    <main class="modal__content">
-        <div class="form-field">
-            <label for="name">Ваше имя:</label>
-            <input class="input__default" type="text" id="name" name="name">
-        </div>
-        <div class="form-field">
-            <label>Ваш день рождения:</label>
-            <input type="text" class="input__date-birth" id="birth-day" maxLength="2" name="name" placeholder="День"> -
-            <input type="text" class="input__date-birth" id="birth-month" maxLength="2" name="name" placeholder="Месяц"> -
-            <input type="text" class="input__date-birth" id="birth-year" maxLength="4" name="name" placeholder="Год">
-        </div>
-    </main>
-
-    <footer class="modal__footer">
-        <button id="modal-cancel" class="modal__cancel" title="Отмена">Отмена</button>
-        <button id="modal-save" class="modal__save" title="Сохранить">Сохранить данные</button>
-    </footer>
-</div>
+    <div class="container">
+        <h1>Создание простейшего модального окошка!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequuntur ab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?</p>
+        <p class="btn"><a href="#" id="modal-open" class="modal-open" title="Покажите мне модальное окошко">Открыть
+                окно</a></p>
+        <div class="modal-data" id="say-hi"></div>
+        <p class="btn"><a href="#" id="clear-data" class="clear-data" style="display: none;">Очистить данные</a></p>
+    </div>
+ 
+    <div class="modal-overlay modal_closed" id="modal-overlay"></div>
+    <div class="modal modal_closed" id="modal">
+        <header class="modal__header">
+            <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
+            <h2>Введите данные</h2>
+        </header>
+        <main class="modal__content">
+            <div class="form-field">
+                <label for="name">Ваше имя:</label>
+                <input class="input__default" type="text" id="name" name="name">
+            </div>
+            <div class="form-field">
+                <label>Ваш день рождения:</label>
+                <input type="text" class="input__date-birth" id="birth-day" name="name" placeholder="День"
+                    maxlength="2"> -
+                <input type="text" class="input__date-birth" id="birth-month" name="name" placeholder="Месяц"
+                    maxlength="2"> -
+                <input type="text" class="input__date-birth" id="birth-year" name="name" placeholder="Год"
+                    maxlength="4">
+            </div>
+        </main>
+        <footer class="modal__footer">
+            <button id="modal-cancel" class="modal__cancel" title="Отмена">Отмена</button>
+            <button id="modal-save" class="modal__save" title="Сохранить">Сохранить данные</button>
+        </footer>
+    </div>
 </body>
 </html>
