@@ -1,3 +1,32 @@
+/* ------- begin view -------- */
+
+let view={
+  divTchk: document.createElement("div"),
+  
+
+  //divTchk.id = "tchk" + i;
+  //divTchk.innerHTML = i;
+}
+
+
+
+
+
+
+/* ------- end view -------- */
+
+
+/* ------- begin modal -------- */
+
+/* ------- end  modal -------- */
+
+
+/* ------- begin controler -------- */
+
+
+
+/* ------- end controler -------- */
+
 let divClock = document.createElement("div");
 divClock.className = "clock";
 

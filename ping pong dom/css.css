@@ -1,0 +1,17 @@
+*{
+   padding: 0;
+   margin: 0;
+}
+#games {
+   width: 700px;
+   height: 500px;
+   border: 1px solid black;
+}
+#field {
+}
+#ball {
+}
+#plauerOne {
+}
+#plauerTwo {
+}

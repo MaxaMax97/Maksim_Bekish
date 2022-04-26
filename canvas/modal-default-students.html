@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <script src="js.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Canvas</title>
+</head>
+
+<body style="margin: 0;">
+    <canvas id="canvas" style="display: block;"> hello</canvas>
+    <script>
+
+
+
+        let canv = document.getElementById("canvas")
+
+        ctx = canv.getContext('2d');
+        canv.width = window.innerWidth;
+        canv.height = window.innerHeight;
+
+
+//////////
+let x=50;
+ctx.fillStyle="orange";
+ctx.fillRect(50,50,300,200)
+setInterval(function(){
+ctx.fillStyle='white';
+ctx.fillRect(0,0,canv.width, canv.height)
+
+ctx.fillStyle='orange';
+    ctx.fillRect(x++,50,300,200)
+},10)
+
+    </script>
+</body>
+
+</html>
