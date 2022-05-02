@@ -1,17 +1,31 @@
-*{
-   padding: 0;
-   margin: 0;
-}
 #games {
-   width: 700px;
-   height: 500px;
-   border: 1px solid black;
+  position: relative;
+  background-color: bisque;
+  border: 1px solid black;
+  margin: 4px;
 }
-#field {
+#time {
+  display: block;
+  text-align: center;
 }
-#ball {
+#IBall {
+  width: 30px;
+  height: 30px;
+  position: absolute;
 }
 #plauerOne {
+  position: absolute;
+  background-color: green;
+  width: 15px;
+  height: 100px;
 }
 #plauerTwo {
+  background-color: blue;
+  position: absolute;
+  width: 15px;
+  height: 100px;
+}
+span {
+  display: block;
+  text-align: center;
 }
