@@ -1,0 +1,61 @@
+.allContent {
+  justify-content: center;
+  display: flex;
+  background: rgb(36, 40, 47);
+  padding: 30px 0 50px 0;
+}
+.person {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: grey;
+}
+.aLLcontent a:hover {
+  color: orange;
+  transition: all 0.5s ease-out;
+}
+
+.aLLcontent a {
+  color: white;
+}
+
+.mainmenu a {
+  color: white;
+  background-color: #686552;
+  display: inline;
+  border-radius: 50px;
+  padding: 5px 12px 5px 12px;
+}
+.mainmenu a:hover {
+  color: orange;
+  transition: all 0.5s ease-out;
+}
+.mainmenu a:hover::before {
+  transform: translate(4px, 4px);
+}
+
+.aLLcontent {
+  margin-top: 9px;
+}
+
+
+.species,
+.origin,
+.name,
+.location,
+.gender,
+.episode,
+.id-persen {
+  padding-left: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.person div {
+  color: black;
+}
+img {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}

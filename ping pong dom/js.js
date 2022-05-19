@@ -19,13 +19,22 @@ ball.src = "https://pngicon.ru/file/uploads/1_1735-128x128.png";
 document.body.append(counter, button, games);
 games.append(plauerOne, plauerTwo, ball, times);
 time.innerHTML = "3";
-let arr = [4, 5, 6, -4, -5, -6];
+let arr = [3, 4, 5, -3, -4, -5];
 let randomX = Math.floor(Math.random() * 6);
 let randomY = Math.floor(Math.random() * 6);
-
+let z = "KeyZ";
+let a = "KeyA";
+let m = "KeyM";
+let k = "KeyK";
+let flackDownOne = true;
+let flackUpOne = true;
+let flackUpTwo = true;
+let flackDownTwo = true;
 button.addEventListener("click", pusk);
-document.addEventListener("keydown", speedOne);
-document.addEventListener("keydown", speedTwo);
+
+let one = document.getElementById("plauerOne");
+
+let two = document.getElementById("plauerTwo");
 
 let areaH = {
   width: 800,
@@ -43,10 +52,11 @@ time.style.width = areaH.width + "px";
 let countone = 0;
 let counttwo = 0;
 let gameover = 5;
-
+let bSpeed = 6;
 let ballH = {
   width: 30,
   height: 30,
+  speepball: 10,
   speedX: arr[randomX],
   speedY: arr[randomY],
   posY: areaH.height / 2 - 15, //     160,
@@ -61,36 +71,32 @@ let ballH = {
 let plOne = {
   width: 15,
   height: 100,
-  speedDown: 10,
-  speedUp: -10,
-  posY: 0,
-  run: function () {
-    let one = document.getElementById("plauerOne");
-    one.style.top = this.posY + "px";
-  },
+  posY: 225, //  areaH.height/2 - this.height/2 ,
+  speed: 0,
 };
-
 let plTwo = {
   width: 15,
   height: 100,
-  speedDown: 10,
-  speedUp: -10,
-  posY: 0,
+  posY: 225, //  areaH.height/2 - this.height/2 ,
+  speed: 0,
   posX: (plauerTwo.style.left = areaH.width - plOne.width + "px"),
-  run: function () {
-    let two = document.getElementById("plauerTwo");
-    two.style.top = this.posY + "px";
-  },
 };
 
+function onePL() {
+  one.style.top = plOne.posY + "px";
+}
+function twoPL() {
+  two.style.top = plTwo.posY + "px";
+}
+
 function start() {
-  setInterval(tick, 40);
+  requestAnimationFrame(tick);
 }
 
 function tick() {
-  let arr = [4, 6, -4, -6];
-  let randomX = Math.floor(Math.random() * 4);
-  let randomY = Math.floor(Math.random() * 4);
+  let arr = [3, 4, 5, -3, -4, -5];
+  let randomX = Math.floor(Math.random() * 6);
+  let randomY = Math.floor(Math.random() * 6);
 
   counter.innerHTML = `${countone} : ${counttwo}`;
 
@@ -166,13 +172,43 @@ function tick() {
     ballH.speedY = -ballH.speedY;
     ballH.posY = 0;
   }
+
+  // Движение ракеток
+  plOne.posY += plOne.speed;
+  plTwo.posY += plTwo.speed;
+
+  //выезд первого вверх
+  if (plOne.posY + plOne.height >= areaH.height) {
+    plOne.posY = areaH.height - plOne.height;
+  }
+
+  //выезд первого вниз
+  if (plOne.posY <= 0) {
+    plOne.posY = 0;
+  }
+  onePL();
+  //выезд второго вверх
+  if (plTwo.posY + plTwo.height >= areaH.height) {
+    plTwo.posY = areaH.height - plTwo.height;
+  }
+
+  //выезд второго вниз
+  if (plTwo.posY <= 0) {
+    plTwo.posY = 0;
+  }
+  twoPL();
+
   touchLeft();
   touchRight();
 
   ballH.update();
+  document.addEventListener("keydown", startRun);
+  document.addEventListener("keyup", finishRun);
+  requestAnimationFrame(tick);
 }
 
 function pusk() {
+  button.disabled = true;
   coundDown();
 
   setTimeout(start, 3000);
@@ -197,38 +233,7 @@ function coundDown() {
   }
 }
 
-function speedOne(event) {
-  if (event.code == "KeyZ") {
-    plOne.posY += plOne.speedDown;
-    if (plOne.posY + plOne.height >= areaH.height) {
-      plOne.posY = areaH.height - plOne.height;
-    }
-  }
-  if (event.code == "KeyA") {
-    plOne.posY += plOne.speedUp;
-    if (plOne.posY <= 0) {
-      plOne.posY = 0;
-    }
-  }
-
-  plOne.run();
-}
-
-function speedTwo(event) {
-  if (event.code == "KeyM") {
-    plTwo.posY += plTwo.speedDown;
-    if (plTwo.posY + plTwo.height >= areaH.height) {
-      plTwo.posY = areaH.height - plTwo.height;
-    }
-  }
-  if (event.code == "KeyK") {
-    plTwo.posY += plTwo.speedUp;
-    if (plTwo.posY <= 0) {
-      plTwo.posY = 0;
-    }
-  }
-  plTwo.run();
-}
+function speed() {}
 
 function touchRight() {
   if (
@@ -253,3 +258,28 @@ function touchLeft() {
 }
 
 ballH.update();
+
+function startRun(event) {
+  if (event.code == z) {
+    plOne.speed = bSpeed;
+  } else if (event.code == a) {
+    plOne.speed = -bSpeed;
+  }
+  if (event.code == m) {
+    plTwo.speed = bSpeed;
+  } else if (event.code == k) {
+    plTwo.speed = -bSpeed;
+  }
+}
+function finishRun(event) {
+  if (event.code == z) {
+    plOne.speed = 0;
+  } else if (event.code == a) {
+    plOne.speed = 0;
+  }
+  if (event.code == k) {
+    plTwo.speed = 0;
+  } else if (event.code == m) {
+    plTwo.speed = 0;
+  }
+}

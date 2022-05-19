@@ -1,8 +1,0 @@
-Ссылки:
-1) http://fe.it-academy.by/ViewSlides.php?slide=13377&lect=70
-2) http://fe.it-academy.by/ViewSlides.php?slide=13378&lect=70
-3) http://fe.it-academy.by/ViewSlides.php?slide=13379&lect=70
-
-https://blog.zverit.com/frontend/2018/05/21/mvc-on-client/
-https://ru.hexlet.io/blog/posts/chto-takoe-mvc-rasskazyvaem-prostymi-slovami
-*) https://habr.com/ru/post/215605/

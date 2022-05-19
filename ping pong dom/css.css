@@ -16,12 +16,15 @@
 #plauerOne {
   position: absolute;
   background-color: green;
+  top:225px;
   width: 15px;
   height: 100px;
 }
 #plauerTwo {
   background-color: blue;
   position: absolute;
+  top:225px;
+
   width: 15px;
   height: 100px;
 }
