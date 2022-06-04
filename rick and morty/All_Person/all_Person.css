@@ -1,6 +1,87 @@
 body {
   margin: 0;
+
+  font-family: "Source Sans Pro", sans-serif;
 }
+.ban {
+  background-color: #ffffff;
+}
+input:disabled{
+  border: 5px solid #354251;
+  transition: none !important;
+  color: #ffffff;
+  background-color: #354251;
+}
+
+
+.iksweb {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 21px;
+  color: #354251;
+  background: #ffffff;
+  border-radius: 60px;
+  border: 5px solid #354251;
+}
+.iksweb:hover {
+  background: #354251;
+  color: #ffffff;
+  border: 5px solid #354251;
+  transition: all 0.4s ease;
+}
+
+.poisk {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hide {
+  display: none;
+  background-color: red;
+}
+img{
+  width: 200px;
+  display: inline-flex;
+}
+.textRic {
+  display: inline-flex;
+  margin: 0;
+
+}
+.menuBlok {
+  display: inline-flex;
+  float: right;
+    width: 40%;
+  /*justify-content: flex-end;*/
+}
+.menu {
+  display: inline-flex;
+  list-style-type: none;
+}
+.menu li {
+  text-decoration: none;
+}
+.input{
+  box-shadow: 1px 1px 4px;
+  width: 200px;
+  height: 35px;
+  margin: 10px;
+  border-radius: 1px solid black;
+}
+.menu li a {
+  margin: 0px -10px 0 17px;
+    padding: 7px 29px 6px 26px;
+
+}
+
+.focus{
+   background-color: rgba(35, 67, 155, 0.141);;
+   padding: 0;
+   box-sizing: border-;
+ 
+}
+
 .allcontent {
   padding-top: 40px;
   padding-bottom: 81px;
@@ -75,22 +156,38 @@ p {
 #pagination {
   padding: 5px;
   font-size: 20px;
-  display: flex;
+  /*display: flex;*/
   margin-top: 60px;
   justify-content: center;
 }
+.pagin_a{
+  color: orange;
+text-decoration: none;
+  display: inline-block;
+  padding: 7px;
+}
 .paginA {
+  /*color: red;*/
+  
   text-decoration: none;
   display: inline-block;
-
   color: white;
   padding: 7px;
 }
 #pagination a:hover {
   color: orange;
+  font-size: 25px;
+  transition: all 0.1s ;
+
 }
 
-.origin:before, .name:before,  .location:before, .gender:before, .episode:before, .id-persen:before, .species:before {
+.origin:before,
+.name:before,
+.location:before,
+.gender:before,
+.episode:before,
+.id-persen:before,
+.species:before {
   left: 0;
   position: absolute;
   content: "";
