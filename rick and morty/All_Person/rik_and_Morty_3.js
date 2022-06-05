@@ -1,11 +1,12 @@
 import {
    header,
    statusCharacter,
-   getInfo,
-   getURLParameter,
-   status
+   //getInfo,
+   //getURLParameter,
+   status,
+   getInfo
  } from "../function.js";
- //let source = getURLParameter("id");
+
  const alive = "https://rickandmortyapi.com/api/character/?status=alive";
  const character = "https://rickandmortyapi.com/api/character";
  const dead = "https://rickandmortyapi.com/api/character/?status=dead";
@@ -13,9 +14,7 @@ import {
  
  header();
  statusCharacter("GET", character);
- //console.log(typeof urlDead)
- //getInfo();
- 
+// getInfo()
  document.getElementById("aliveee").addEventListener("change", ()=> status());
  
  
@@ -51,4 +50,4 @@ import {
    this.classList.remove("focus");
    console.log("no focus");
  });
- 
+

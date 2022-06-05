@@ -157,17 +157,22 @@ const helpers = {
       xhr.send();
     });
   },
+  getInfo: function (pages, next) {
+    return new Promise((resolve,reject)=>{
 
-  getInfo: (pages, next) => {
+
+      
+    });
+    const xhrPagin= new XMLHttpRequest;
+
     let urlares = next.split("&");
     //console.log( `pages  ${pages}`)
-    document.querySelectorAll('.paginA').innerHTML=''
+    document.querySelectorAll('.paginA').innerHTML = ' ';
     for (let i = 1; i <= pages; i++) {
-    
-     let a = document.createElement("a");
-    // console.log(Boolean(typeof a))
-      a.href = `https://rickandmortyapi.com/api/character?page=${i}&${
-        urlares[1] ? urlares[1] : ""}`;
+
+      let a = document.createElement("a");
+      // console.log(Boolean(typeof a))
+      a.href = `https://rickandmortyapi.com/api/character?page=${i}&${urlares[1] ? urlares[1] : ''}`;
 
       a.innerText = `${i}`;
       a.className = "paginA";
@@ -182,7 +187,7 @@ const helpers = {
         helpers.pointpagin = false;
       });
       pagination.append(a);
-    }  
+    }
   },
   status: function () {
     const deadOP = document.getElementById("aliveee");

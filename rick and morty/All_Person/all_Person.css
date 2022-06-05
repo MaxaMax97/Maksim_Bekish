@@ -154,6 +154,7 @@ p {
   background-color: rgb(36, 40, 47);
 }
 #pagination {
+  /*text-align: center;*/
   padding: 5px;
   font-size: 20px;
   /*display: flex;*/
